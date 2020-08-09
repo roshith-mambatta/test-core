@@ -1,0 +1,23 @@
+<xml version="1-0" encoding="UTF-8">
+
+<changeSet>
+
+<change id="1" author="user.1" >
+  <jira_id>TEST-10494</jira_id>
+  <comment>Test this comment for 1</comment>
+  <file fileTpe="file" path="CCM_services/EDITIQ/Engine_batch.sh">
+</change>
+
+<change id="1" author="user.2" >
+  <jira_id>TEST-1024</jira_id>
+  <comment>Test this comment for 2</comment>
+  <file fileTpe="dir" path="CCM_services/EDITIQ/resources">
+</change>
+
+<change id="1" author="user.2" >
+  <jira_id>TEST-1024</jira_id>
+  <comment>Test this comment for 2</comment>
+  <file fileTpe="pub" pubFileName="etest" par1="" par2="">
+</change>
+
+</changeSet>
