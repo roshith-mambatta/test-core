@@ -1,0 +1,87 @@
+{
+   "RELEASE": [
+      {
+         "Step": "GIT_CLONE",
+         "StepOrder": 1,
+         "StepDesc": "Create a ccm-core repo local copy under {base.dir}/git_copy/",
+         "Arguments" : {"method" : "GitClone.py", "giturl" : "https://github.com/roshith-mambatta/test-core"}
+      },
+      {
+         "Step": "READ_RELEASE_TAG",
+         "StepOrder": 2,
+         "StepDesc": "Read release from ccm-core/release{releaseTag} and build and task list",
+         "Arguments" : {"releaseNotesTargetPath" : "/releaseNotes.txt"}
+
+      },
+      {
+         "Step": "BUILD_EXSTREAM_PUB",
+         "StepOrder": 3,
+         "StepDesc": "Call CCM|ExstreamPackger when list is action",
+         "Arguments" : {"batchFile" : "exstreamPackger"}
+      },
+      {
+         "Step": "BUILD_PACKAGE",
+         "StepOrder": 4,
+         "StepDesc": "Create a .tar file"
+      },
+      {
+         "Step": "DEPLOY_PACKAGE",
+         "StepOrder": 5,
+         "StepDesc": "Deploy the content to target server"
+      },
+      {
+         "Step": "TEST_PACKAGE",
+         "StepOrder": 6,
+         "StepDesc": "Run the test NRT suite"
+      },
+      {
+         "Step": "PUSH_TO_NEXUS",
+         "StepOrder": 7,
+         "StepDesc": "Create a ccm-core repo local copy"
+      }
+   ],
+   "NIGHTLY_BUILD": [
+      {
+         "Step": "GIT_CLONE",
+         "StepOrder": 1,
+         "StepDesc": "Create a ccm-core repo local copy"
+      },
+      {
+         "Step": "READ_RELEASE_TAG",
+         "StepOrder": 2,
+         "StepDesc": "Create a ccm-core repo local copy"
+      },
+      {
+         "Step": "BUILD_EXSTREAM_PUB",
+         "StepOrder": 3,
+         "StepDesc": "Create a ccm-core repo local copy"
+      },
+      {
+         "Step": "BUILD_PACKAGE",
+         "StepOrder": 4,
+         "StepDesc": "Create a ccm-core repo local copy"
+      }
+   ],
+   "NRT": [
+      {
+         "Step": "GIT_CLONE",
+         "StepOrder": 1,
+         "StepDesc": "Create a ccm-core repo local copy"
+      },
+      {
+         "Step": "READ_TEST_CASES",
+         "StepOrder": 2,
+         "StepDesc": "Create a ccm-core repo local copy"
+      },
+      {
+         "Step": "BUILD_PUB",
+         "StepOrder": 3,
+         "StepDesc": "Create a ccm-core repo local copy"
+      },
+      {
+         "Step": "BUILD_PACKAGE",
+         "StepOrder": 4,
+         "StepDesc": "Create a ccm-core repo local copy"
+      }
+   ]
+}
